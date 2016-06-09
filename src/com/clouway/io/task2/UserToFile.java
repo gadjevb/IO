@@ -1,16 +1,14 @@
-package com.clouway.IO.task2;
+package com.clouway.io.task2;
 
 import java.io.*;
 
-public class WriteToFile {
-    private InputStreamReader input = null;
-    private BufferedReader in = null;
-    private PrintWriter output = null;
+public class UserToFile {
 
     public void writeInFile(String fileName){
+        PrintWriter output = null;
         boolean flag = true;
-        input = new InputStreamReader(System.in);
-        in = new BufferedReader(input);
+        InputStreamReader input = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(input);
 
         try {
             output = new PrintWriter(fileName, "UTF-8");

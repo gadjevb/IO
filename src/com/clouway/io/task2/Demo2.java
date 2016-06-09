@@ -1,10 +1,10 @@
-package com.clouway.IO.task2;
+package com.clouway.io.task2;
 
 import java.util.Scanner;
 
-public class Demo {
+public class Demo2 {
     public static void main(String [] args){
-        WriteToFile writer = new WriteToFile();
+        UserToFile writer = new UserToFile();
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter the name of the text file you wish to write in: ");
         String fileName = sc.nextLine();

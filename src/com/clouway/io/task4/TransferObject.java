@@ -1,28 +1,18 @@
-package com.clouway.IO.task4;
+package com.clouway.io.task4;
 
 import java.io.*;
 
 public class TransferObject {
-    private InputStream input = null;
-    private OutputStream output = null;
 
-    public void transferObject(String fileName, String transferFile){
-        try {
-            input = new FileInputStream(fileName);
-        } catch (FileNotFoundException e) {
-            System.out.println("File " + fileName + " not found!");
-        }
-        try {
-            output = new FileOutputStream(transferFile);
-        } catch (FileNotFoundException e) {
-            System.out.println("File " + transferFile + " not found!");
-        }
-
+    public void transferObject(InputStream input, OutputStream output, int offset, int size){
         int temp;
 
         try {
             while((temp = input.read()) != -1){
-                output.write(temp);
+                if((offset <= 0) && (offset > size)) {
+                    output.write(temp);
+                }
+                offset--;
             }
         } catch (IOException e) {
             System.out.println("Input error!");

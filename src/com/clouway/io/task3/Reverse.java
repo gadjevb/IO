@@ -1,16 +1,16 @@
-package com.clouway.IO.task3;
+package com.clouway.io.task3;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Reverse {
-    private Scanner reader = null;
-    private PrintWriter writer = null;
-    private ArrayList<String> list = null;
 
     public void reverseFile(String fileName){
-        list = new ArrayList<>();
+        Scanner reader = null;
+        PrintWriter writer = null;
+
+        ArrayList<String> list = new ArrayList<>();
         try {
             reader = new Scanner(new File(fileName));
         } catch (FileNotFoundException e) {
