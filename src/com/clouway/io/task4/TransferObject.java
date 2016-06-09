@@ -4,9 +4,9 @@ import java.io.*;
 
 public class TransferObject {
 
-    public String transferObject(InputStream input, OutputStream output, int offset, int size) throws IOException {
+    public int transferObject(InputStream input, OutputStream output, int offset, int size) throws IOException {
         size = (size * (-1));
-        int temp;
+        int temp, count = 0;
         while((temp = input.read()) != -1){
             if((offset <= 0) && (offset > size)) {
                 output.write(temp);
@@ -14,6 +14,7 @@ public class TransferObject {
             if(offset < size){
                 break;
             }
+            count++;
             offset--;
         }
         if(output != null){
@@ -22,7 +23,7 @@ public class TransferObject {
         if(input != null){
             input.close();
         }
-
-        return "Transfer is complete";
+        count--;
+        return count;
     }
 }

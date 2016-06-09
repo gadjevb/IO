@@ -10,7 +10,7 @@ public class DirectoryBrowser {
         Path dir = Paths.get(path);
         File flagFile = new File(path);
         if(flagFile.isFile()){
-            return "The path leads to file!";
+            return flagFile.getName() + " -> is file, not a directory!";
         }else {
             try (DirectoryStream<Path> stream = Files.newDirectoryStream(dir)) {
                 for (Path file : stream) {

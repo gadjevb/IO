@@ -34,7 +34,7 @@ public class Demo4 {
         System.out.print("Enter the size: ");
         size = sc.nextInt();
         try {
-            transfer.transferObject(input, output, offset, size);
+            System.out.println("Number of transferred bytes: " + transfer.transferObject(input, output, offset, size));
         } catch (IOException e) {
             e.printStackTrace();
         }
