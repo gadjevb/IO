@@ -11,13 +11,13 @@ public class Demo1 {
         } catch (IOException e) {
             e.getMessage();
         } catch (NumberFormatException nfe){
-            nfe.getMessage();
+            nfe.getStackTrace();
         }
         char tempChar = 0;
         try {
             tempChar = read.readChar();
         } catch (IOException e) {
-            e.getMessage();
+            e.getStackTrace();
         }
         System.out.print("The integer is: " + tempInt + "\n");
         System.out.print("The char is: " + tempChar);

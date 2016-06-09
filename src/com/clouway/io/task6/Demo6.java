@@ -13,7 +13,7 @@ public class Demo6 {
         try {
             browser.listContent(tempPath);
         } catch (IOException e) {
-            System.out.println("Directory not found!");
+            e.getStackTrace();
         }
     }
 }

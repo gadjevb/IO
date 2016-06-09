@@ -17,7 +17,7 @@ public class Demo4 {
         try{
             input = new FileInputStream(tempInput);
         }catch (FileNotFoundException fnf){
-            System.out.println("File not found!");
+            fnf.getStackTrace();
         }
 
         System.out.print("Enter the output stream file: ");
@@ -26,7 +26,7 @@ public class Demo4 {
         try{
             output = new FileOutputStream(tempOutput);
         }catch (FileNotFoundException fnf){
-            System.out.println("File not found!");
+            fnf.getStackTrace();
         }
 
         System.out.print("Enter the offset: ");

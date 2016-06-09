@@ -11,18 +11,18 @@ public class Demo5 {
         try {
             output = new FileOutputStream("Save");
         } catch (FileNotFoundException e) {
-            System.out.println("File not found!");
+            e.getStackTrace();
         }
         try {
             input = new FileInputStream("Save");
         } catch (FileNotFoundException e) {
-            System.out.println("File not found!");
+            e.getStackTrace();
         }
 
         try {
             data.saveObject(output,"My Text");
         } catch (IOException e) {
-            System.out.println("Error while saving the file!");
+            e.getStackTrace();
         }
 
         try {
