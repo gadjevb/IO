@@ -4,33 +4,19 @@ import java.io.*;
 
 public class TransferObject {
 
-    public void transferObject(InputStream input, OutputStream output, int offset, int size){
+    public void transferObject(InputStream input, OutputStream output, int offset, int size) throws IOException {
         int temp;
-
-        try {
-            while((temp = input.read()) != -1){
-                if((offset <= 0) && (offset > size)) {
-                    output.write(temp);
-                }
-                offset--;
+        while((temp = input.read()) != -1){
+            if((offset <= 0) && (offset > size)) {
+                output.write(temp);
             }
-        } catch (IOException e) {
-            System.out.println("Input error!");
+            offset--;
         }
-
         if(output != null){
-            try {
-                output.close();
-            } catch (IOException e) {
-                System.out.println("Error while closing the output stream!");
-            }
+            output.close();
         }
         if(input != null){
-            try {
-                input.close();
-            } catch (IOException e) {
-                System.out.println("Error while closing the input stream!");
-            }
+            input.close();
         }
 
         System.out.println("Transfer is completed!");

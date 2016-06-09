@@ -4,25 +4,17 @@ import java.io.*;
 
 public class UserToFile {
 
-    public void writeInFile(String fileName){
+    public void writeInFile(String fileName) throws IOException {
         PrintWriter output = null;
         boolean flag = true;
         InputStreamReader input = new InputStreamReader(System.in);
         BufferedReader in = new BufferedReader(input);
 
-        try {
-            output = new PrintWriter(fileName, "UTF-8");
-        } catch (IOException e) {
-            System.out.println("Output error!");
-        }
+        output = new PrintWriter(fileName, "UTF-8");
 
         while(flag){
             String temp = "";
-            try {
-                temp = in.readLine();
-            } catch (IOException e) {
-                System.out.println("Input error!");
-            }
+            temp = in.readLine();
             if(temp.equals(".")){
                 flag = false;
             }else {
@@ -34,18 +26,10 @@ public class UserToFile {
             output.close();
         }
         if(in != null){
-            try {
-                in.close();
-            } catch (IOException e) {
-                System.out.println("Error while closing input stream!");
-            }
+            in.close();
         }
         if(input != null){
-            try {
-                input.close();
-            } catch (IOException e) {
-                System.out.println("Error while closing input stream!");
-            }
+            input.close();
         }
     }
 }

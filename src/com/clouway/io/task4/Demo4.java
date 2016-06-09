@@ -33,6 +33,10 @@ public class Demo4 {
         offset = sc.nextInt();
         System.out.print("Enter the size: ");
         size = sc.nextInt() * (-1);
-        transfer.transferObject(input, output, offset, size);
+        try {
+            transfer.transferObject(input, output, offset, size);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

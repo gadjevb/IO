@@ -6,16 +6,12 @@ import java.util.Scanner;
 
 public class Reverse {
 
-    public void reverseFile(String fileName){
+    public void reverseFile(String fileName) throws IOException, FileNotFoundException {
         Scanner reader = null;
         PrintWriter writer = null;
 
         ArrayList<String> list = new ArrayList<>();
-        try {
-            reader = new Scanner(new File(fileName));
-        } catch (FileNotFoundException e) {
-            System.out.println("File not found!");
-        }
+        reader = new Scanner(new File(fileName));
 
         while(reader.hasNextLine()){
             String temp = reader.nextLine();
@@ -23,11 +19,7 @@ public class Reverse {
             list.add(temp);
         }
 
-        try {
-            writer = new PrintWriter(fileName);
-        } catch (IOException e) {
-            System.out.println("Output error!");
-        }
+        writer = new PrintWriter(fileName);
 
         for(int i = 0; i < list.size(); i++){
             String temp = list.get(i).toString();
