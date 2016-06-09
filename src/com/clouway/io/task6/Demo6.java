@@ -11,7 +11,7 @@ public class Demo6 {
         System.out.print("Enter the file path: ");
         tempPath = sc.nextLine();
         try {
-            browser.listContent(tempPath);
+            System.out.println(browser.listContent(tempPath));
         } catch (IOException e) {
             e.getStackTrace();
         }

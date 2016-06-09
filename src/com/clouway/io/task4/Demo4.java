@@ -32,7 +32,7 @@ public class Demo4 {
         System.out.print("Enter the offset: ");
         offset = sc.nextInt();
         System.out.print("Enter the size: ");
-        size = sc.nextInt() * (-1);
+        size = sc.nextInt();
         try {
             transfer.transferObject(input, output, offset, size);
         } catch (IOException e) {

@@ -4,11 +4,15 @@ import java.io.*;
 
 public class TransferObject {
 
-    public void transferObject(InputStream input, OutputStream output, int offset, int size) throws IOException {
+    public String transferObject(InputStream input, OutputStream output, int offset, int size) throws IOException {
+        size = (size * (-1));
         int temp;
         while((temp = input.read()) != -1){
             if((offset <= 0) && (offset > size)) {
                 output.write(temp);
+            }
+            if(offset < size){
+                break;
             }
             offset--;
         }
@@ -19,6 +23,6 @@ public class TransferObject {
             input.close();
         }
 
-        System.out.println("Transfer is completed!");
+        return "Transfer is complete";
     }
 }

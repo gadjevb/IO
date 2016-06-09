@@ -2,7 +2,7 @@ package com.clouway.io.task2;
 
 import java.io.*;
 
-public class UserToFile {
+public class ConsoleInput {
 
     public void writeInFile(String fileName) throws IOException {
         PrintWriter output = null;

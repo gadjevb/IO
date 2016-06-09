@@ -6,7 +6,7 @@ public class Demo3 {
     public static void main(String [] args){
         Reverse reverse = new Reverse();
         try {
-            reverse.reverseFile("Test");
+            System.out.println(reverse.reverseFile("Test"));
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Demo2 {
     public static void main(String [] args){
-        UserToFile writer = new UserToFile();
+        ConsoleInput writer = new ConsoleInput();
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter the name of the text file you wish to write in: ");
         String fileName = sc.nextLine();

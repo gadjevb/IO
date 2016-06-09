@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Reverse {
 
-    public void reverseFile(String fileName) throws IOException, FileNotFoundException {
+    public String reverseFile(String fileName) throws IOException, FileNotFoundException {
         Scanner reader = null;
         PrintWriter writer = null;
 
@@ -26,13 +26,13 @@ public class Reverse {
             writer.println(temp);
         }
 
-        System.out.println("The text in " + fileName + " is reversed!");
-
         if(writer != null){
             writer.close();
         }
         if(reader != null){
             reader.close();
         }
+
+        return "The text in " + fileName + " is reversed!";
     }
 }
